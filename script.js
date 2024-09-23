@@ -130,25 +130,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleKeyPress(e) {
-        const key = e.key;
+        const key = e.key.toLowerCase();
         const goingUp = dy === -1;
         const goingDown = dy === 1;
         const goingRight = dx === 1;
         const goingLeft = dx === -1;
 
-        if (key === 'ArrowUp' && !goingDown) {
+        if ((key === 'arrowup' || key === 'w') && !goingDown) {
             dx = 0;
             dy = -1;
         }
-        if (key === 'ArrowDown' && !goingUp) {
+        if ((key === 'arrowdown' || key === 's') && !goingUp) {
             dx = 0;
             dy = 1;
         }
-        if (key === 'ArrowLeft' && !goingRight) {
+        if ((key === 'arrowleft' || key === 'a') && !goingRight) {
             dx = -1;
             dy = 0;
         }
-        if (key === 'ArrowRight' && !goingLeft) {
+        if ((key === 'arrowright' || key === 'd') && !goingLeft) {
             dx = 1;
             dy = 0;
         }
